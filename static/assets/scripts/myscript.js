@@ -10,11 +10,9 @@ $(function(){
     $("input[name='q']").addClass("form-control");
     $("input[name='btnI']").css('display', 'none');
     $("td[width='25%']").css({
-        "width" : $(window).width()/3
+        "width" : 0
     });
-    $(window).resize(function(){
-        $("td[width='25%']").css({
-            "width" : $(window).width()/3
-        });
+    $(".VBt9Dc, .hp-xpdbox").css({
+        "display" : "none"
     });
 })

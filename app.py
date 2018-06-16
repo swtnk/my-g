@@ -14,7 +14,9 @@ def query(data):
     data = request.query_string
     if str(data)[2:4] == 'ie':
         results = get_query(data)
-        return render_template('result.html', results = results)
+        form = get_page()
+        data = [results, Markup(form)]
+        return render_template('result.html', data = data)
     elif str(data)[2:3]:
         return get_site(data)
 
@@ -36,4 +38,4 @@ def get_site(data):
     return redirect(data)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)

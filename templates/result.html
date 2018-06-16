@@ -10,18 +10,25 @@
         <link href="/static/assets/styling/custom-element.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div class="container">
-            <div class="row" style="padding: 10px;">
-                <div class="row" style="text-align: center;">
-                    <h2>APNA GOOGLE</h2>
-                </div>
-                <div class="row">
-                    <div class="seach-results">
-                        {% for result in results %}
-                            <div class="row">
-                                {{ result }}
-                            </div>
-                        {% endfor %}
+        <div class="container-fluid">
+            <div class="col-sm-offset-1 col-sm-10">
+                <div class="row" style="padding: 40px;">
+                    <div class="row" style="text-align: center;">
+                        <h2>Web Search</h2>
+                    </div>
+                    <div class="row">
+                        <div class="seach-box col-sm-offset-4 col-sm-4" style="text-align: center;">
+                            {{ data[1] }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="seach-results">
+                            {% for result in data[0] %}
+                                <div class="row">
+                                    {{ result }}
+                                </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
