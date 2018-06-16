@@ -1,0 +1,13 @@
+
+.center {
+    text-align: center;
+}
+
+html {
+    max-width: 100%;
+    position: relative;
+}
+
+.fl .sblc{
+    display: none;
+}

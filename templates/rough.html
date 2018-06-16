@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/search" name="f">
+        <table cellpadding="0" cellspacing="0" style="text-align: center;">
+            <tr valign="top">
+                <td align="center" nowrap="" style="text-align: center;">
+                    <input name="ie" type="hidden" value="ISO-8859-1" />
+                    <input name="hl" type="hidden" value="en-IN" />
+                    <input name="source" type="hidden" value="hp" />
+                    <input name="biw" type="hidden" />
+                    <input name="bih" type="hidden" />
+                    <div class="ds" style="text-align: center;">
+                        <input autocomplete="off" class="lst" maxlength="2048" name="q" size="57" style="color:#000;margin:0;padding:5px 8px 0 6px;vertical-align:top"
+                            title="Google Search" value="" />
+                    </div>
+                    <br style="line-height:0" />
+                    <span class="ds">
+                        <span class="lsbb">
+                            <input class="lsb" name="btnG" type="submit" value="Google Search" />
+                        </span>
+                    </span>
+                    <span class="ds">
+                        <span class="lsbb">
+                            <input class="lsb" name="btnI" onclick="if(this.form.q.value)this.checked=1; else top.location='/doodles/'"
+                                type="submit" value="I'm Feeling Lucky" />
+                        </span>
+                    </span>
+                </td>
+            </tr>
+        </table>
+        <input id="gbv" name="gbv" type="hidden" value="1" />
+    </form>
+</body>
+</html>

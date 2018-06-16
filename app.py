@@ -1,28 +1,35 @@
 from flask import *
 import bs4 as bs
 import requests
+import urllib
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return get_page()
+    form = Markup(get_page())
+    return render_template('index.html', form = form)
 
 @app.route('/<string:data>')
 def query(data):
     data = request.query_string
     if str(data)[2:4] == 'ie':
-        return get_query(data)
+        results = get_query(data)
+        return render_template('result.html', results = results)
     elif str(data)[2:3]:
         return get_site(data)
 
 def get_page():
-    content = requests.get('https://www.google.com')
-    return content.text
+    sauce = urllib.request.urlopen("https://www.google.com").read()
+    soup = bs.BeautifulSoup(sauce, 'lxml')
+    search_form = [form for form in soup.find_all('form') if form.get('action') == '/search']
+    return str(search_form[0])
 
 def get_query(data):
     url = 'https://www.google.com/search?' + str(data)[2:len(str(data)) - 1]
     data = requests.get(url)
-    return data.text
+    soup = bs.BeautifulSoup(data.text, 'lxml')
+    results = [Markup(result) for result in soup.find_all('div', {'class' : 'g'})]
+    return results
 
 def get_site(data):
     data = str(data)[4:].split('&sa')[0]
