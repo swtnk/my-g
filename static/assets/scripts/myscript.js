@@ -1,5 +1,5 @@
 $(function(){
-    $(".fl").css({
+    $("td.fl").css({
         "display": 'none'
     });
     $("input[name='btnG']").prop('value', 'Search The Web');
@@ -14,5 +14,9 @@ $(function(){
     });
     $(".VBt9Dc, .hp-xpdbox").css({
         "display" : "none"
+    });
+    $("a.fl").css({
+        "display" : "none",
+        "padding" : "0 2px 0 2px"
     });
 })

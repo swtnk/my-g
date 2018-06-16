@@ -15,7 +15,7 @@ def query(data):
     if str(data)[2:4] == 'ie':
         results = get_query(data)
         form = get_page()
-        data = [results, Markup(form)]
+        data = [results[0], Markup(form), Markup(results[1][0])]
         return render_template('result.html', data = data)
     elif str(data)[2:3]:
         return get_site(data)
@@ -31,7 +31,8 @@ def get_query(data):
     data = requests.get(url)
     soup = bs.BeautifulSoup(data.text, 'lxml')
     results = [Markup(result) for result in soup.find_all('div', {'class' : 'g'})]
-    return results
+    nav = soup.find_all('table', {'id' : 'nav'})
+    return [results, nav]
 
 def get_site(data):
     data = str(data)[4:].split('&sa')[0]
