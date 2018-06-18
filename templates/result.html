@@ -8,13 +8,14 @@
         <link href="/static/assets/styling/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="/static/assets/styling/bootstrap/css/select.min.css" rel="stylesheet" type="text/css">
         <link href="/static/assets/styling/custom-element.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC" rel="stylesheet">
     </head>
     <body>
         <div class="container-fluid">
-            <div class="col-sm-offset-1 col-sm-10">
+            <div class="col-sm-12">
                 <div class="row" style="padding: 40px;">
                     <div class="row" style="text-align: center;">
-                        <h2>Web Search</h2>
+                        <h1 style="font-family: 'IM Fell English SC', serif;">Web Search</h1>
                     </div>
                     <div class="row">
                         <div class="seach-box col-sm-offset-4 col-sm-4" style="text-align: center;">
@@ -24,7 +25,7 @@
                     <div class="row">
                         <div class="seach-results">
                             {% for result in data[0] %}
-                                <div class="row">
+                                <div class="row" style="padding: 10px; margin: 10px; word-wrap: break-word;">
                                     {{ result }}
                                 </div>
                             {% endfor %}
@@ -36,6 +37,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row disclaimer" style="text-align:center; margin-top: 50px;">
+                <h5>The Roy | For Education Purposes</h5>
+                <p class="muted-text">Version: 1.0.2</p>
             </div>
         </div>
         <script src="/static/assets/scripts/jquery.js" type="text/javascript"></script>

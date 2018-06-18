@@ -11,7 +11,7 @@ $(function(){
     $("input[name='btnI']").css('display', 'none');
     $("td[width='25%']").css({
         "width" : 0
-    });
+    }).hide();
     $(".VBt9Dc, .hp-xpdbox").css({
         "display" : "none"
     });
