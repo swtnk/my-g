@@ -20,6 +20,10 @@ def query(data):
     elif str(data)[2:3]:
         return get_site(data)
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 def get_page():
     sauce = urllib.request.urlopen("https://www.google.com").read()
     soup = bs.BeautifulSoup(sauce, 'lxml')
